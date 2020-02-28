@@ -1,6 +1,6 @@
 # hello-server
 
-hello语音后台
+租手游后台
 
 ## QuickStart
 
