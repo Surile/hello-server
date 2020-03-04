@@ -10,8 +10,12 @@ module.exports = {
     enable: true,
     package: 'egg-jwt'
   },
-  sequelize: {
+  // sequelize: {
+  //   enable: true,
+  //   package: 'egg-sequelize'
+  // }
+  cors: {
     enable: true,
-    package: 'egg-sequelize'
+    package: 'egg-cors'
   }
 }
