@@ -3,12 +3,14 @@
 module.exports = app => {
   const { STRING, INTEGER, DATE, NOW } = app.Sequelize
 
-  const User = app.model.define(
-    'user',
+  const Tasks = app.model.define(
+    'tasks',
     {
       id: { type: INTEGER, primaryKey: true, autoIncrement: true },
-      name: STRING(30),
-      age: INTEGER,
+      appId: INTEGER,
+      userId: INTEGER,
+      status: INTEGER,
+      description: STRING(255),
       createdAt: {
         type: DATE,
         field: 'created_at',
@@ -26,15 +28,15 @@ module.exports = app => {
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      tableName: 'users'
+      tableName: 'tasks'
     }
   )
 
-  User.associate = function() {
-    app.model.User.hasMany(app.model.Tasks, {
+  Tasks.associate = function() {
+    app.model.Tasks.belongsTo(app.model.User, {
       foreignKey: 'userId'
     })
   }
 
-  return User
+  return Tasks
 }
