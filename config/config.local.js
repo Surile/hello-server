@@ -12,19 +12,6 @@ module.exports = appInfo => {
    **/
   const config = (exports = {})
 
-  config.security = {
-    csrf: {
-      enable: false,
-      ignoreJSON: true
-    },
-    domainWhiteList: ['*']
-  }
-
-  config.cors = {
-    origin: '*',
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH'
-  }
-
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1582861865715_3478'
 
@@ -41,7 +28,7 @@ module.exports = appInfo => {
     port: 3306,
     username: 'root',
     password: '123456',
-    database: 'hello_server'
+    database: 'hello_server_test'
   }
 
   // add your middleware config here
