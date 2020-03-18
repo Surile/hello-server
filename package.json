@@ -34,6 +34,8 @@
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
+    "yarn mysql:test": "NODE_ENV=test npx sequelize db:migrate:up",
+    "yarn mysql:prod": "NODE_ENV=prod npx sequelize db:migrate:up",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
